@@ -46,7 +46,7 @@ GitHub is very essential to this project because it works as a window / door for
 
 #### **2.6.1. Resources employed to get the job done**
 
-I utilized several resources to complete this paper. Google was used to search each tools' definition and most prevalent use, and Google led to the corresponding websites, which I used to provide definition for each apparatus. Professor Sanchez's website and github repo [6] were also referenced
+I utilized several resources to complete this paper. Google was used to search each tools' definition and most prevalent use, and Google led to the corresponding websites, which I used to provide definition for each apparatus. Professor Sanchez's website and github repo [6] were also referenced in order to recollect the importance and reason of creating reproducible document.
 
 #### **2.6.2. Easy parts**
 
