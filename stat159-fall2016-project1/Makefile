@@ -1,5 +1,5 @@
 # Main target: paper.html
-all: paper.html
+all: paper.html .PHONY
 
 .PHONY: all clean
 
