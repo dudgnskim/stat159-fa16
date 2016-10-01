@@ -14,7 +14,7 @@
 
 - - -
 
-#### **ABSTRACT**
+### **ABSTRACT**
 The **main objective** of this paper is to introduce the _computational tools_, such as bash, markdown, pandoc, git, github, and Make. There will be comments on each tool, and explanation of what role it plays in the process of writing a paper. In order to fulfill the main objective, I focus on answering the following bullet-points:
 
 * Explain what is a Makefile and the role it plays in this reproducible workflow.
@@ -29,4 +29,5 @@ The **main objective** of this paper is to introduce the _computational tools_, 
 * What was the most time consuming part?
 * Did you work with and/or get help from someone else? If yes, in what manner?
 * How much time did it take?
+
 
