@@ -96,10 +96,11 @@ GitHub is very essential to this project because it works as a window / door for
 
 #### **2.6.1. Resources employed to get the job done**
 
-I utilized several resources to complete this paper. Google was used to search each tools' definition and most prevalent use, and Google led to the corresponding websites, which I used to provide definition for each apparatus. Professor Sanchez's website and github repo were also referenced
+I utilized several resources to complete this paper. Google was used to search each tools' definition and most prevalent use, and Google led to the corresponding websites, which I used to provide definition for each apparatus. Professor Sanchez's website and github repo [6] were also referenced
 
 #### **2.6.2. Easy parts**
 
+Easy parts were definitely the actual coding part. Makefile coding was not as complex as I thought it would be at first, but it was absolutely fascinating to actually create my own reproducible document with only a single command.
 
 #### **2.6.3. Challenging parts**
 
@@ -129,7 +130,7 @@ Since the submission is by pushing the content with correct working directory to
 8. git add . & git commit
 9. git push -u origin master
 
-In the end, I believe the error was caused because I created a README.md file on the github repository, but clearly it was not in my local repository. Since there exists a file on the github repo, which is updated by the local repo by _git push_ command, it was only natural for the program to get confused, and throw me the error with hint messages.
+In the end, I believe the error arose because I created a README.md file on the github repository, but clearly it was not in my local repository. Since there exists a file on the github repo, which is updated by the local repo by _git push_ command, it was only natural for the program to get confused, and throw me the error with hint messages.
  
 
 #### **2.6.5. Most time-consuming part**
@@ -166,5 +167,5 @@ For the project, I had to invest around 8 hours, mostly due to errors on pushing
 [5] Markdown:
 [http://kirkstrobeck.github.io/whatismarkdown.com/](http://kirkstrobeck.github.io/whatismarkdown.com/)
 
-[6] STAT159:
+[6] STAT159 website:
 [http://gastonsanchez.com/stat159/](http://gastonsanchez.com/stat159/)
