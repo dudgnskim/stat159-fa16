@@ -1,4 +1,4 @@
-# Main target: paper.md, paper.html
+# Main target: paper.html
 all: paper.html
 
 .PHONY: all clean
