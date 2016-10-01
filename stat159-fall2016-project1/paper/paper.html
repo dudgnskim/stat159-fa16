@@ -32,18 +32,75 @@
 <li>Did you work with and/or get help from someone else? If yes, in what manner?</li>
 <li>How much time did it take?</li>
 </ul>
+<p>This paper is created from one of the projects of STAT159, <em>Reproducible and Collaborative Statistical Data Science</em>. <img src="../images/stat159-logo.png" alt="stat159" /></p>
 <hr />
 <h3 id="introduction-1"><strong>1. INTRODUCTION</strong></h3>
-<p><em>Why is 'Reproducible Research' so important to so many people in modern era?</em> Before discussing all the tools that brought about the era of reproducible research, we should understand, and be able to answer the question above. Consider why it exists, and why it is done. Reproducible research is, as described in its name, a research that individuals, in addition to the authors, can recreate all of the <em>computations</em> described in a body of work. From the definition, we could reach the conclusion that reproducible research exists and is conducted in order to show evidence or the author's work's correctness as well as to enable others to make use of the methods and results.</p>
+<p><em>Why is 'Reproducible Research' so important to so many people in modern era?</em> Before discussing all the tools that brought about the heyday of reproducible research, we should understand, and be able to answer the question above. Consider why it exists, and why it is done. Reproducible research is, as described in its name, a research that individuals, in addition to the authors, can recreate all of the <em>computations</em> described in a body of work. From the definition, we could reach the conclusion that reproducible research exists and is conducted in order to show evidence or the author's work's correctness as well as to enable others to make use of the methods and results.</p>
 <p>The principles of reproducible research are the following:</p>
 <ul>
-<li>traditional unit of scholarly communication - a published article - is only the tip of the iceberg of the research process</li>
+<li>Traditional unit of scholarly communication (e.g. a published article) is only the tip of the iceberg of the research process</li>
 <li>To expose more of the research workflow to our audience.</li>
 <li>Makes it easier for them to make a more informed assessment of our methods and results</li>
 <li>Makes it easier for them to adapt our methods to their own research.</li>
 </ul>
 <hr />
 <h3 id="discussion-1"><strong>2. DISCUSSION</strong></h3>
+<h4 id="makefile"><strong>2.1. Makefile</strong></h4>
+<h4 id="role-of-makefile-in-reproducible-workflow"><strong>2.1.1. Role of Makefile in reproducible workflow</strong></h4>
+<h4 id="git"><strong>2.2. Git</strong></h4>
+<div class="figure">
+<img src="../images/git-logo.png" alt="git" />
+<p class="caption">git</p>
+</div>
+<h4 id="role-of-git-in-reproducible-workflow"><strong>2.2.1. Role of Git in reproducible workflow</strong></h4>
+<h4 id="github"><strong>2.3. GitHub</strong></h4>
+<div class="figure">
+<img src="../images/github-logo.png" alt="github" />
+<p class="caption">github</p>
+</div>
+<h4 id="role-of-github-in-this-project"><strong>2.3.1. Role of GitHub in this project</strong></h4>
+<h4 id="pandoc"><strong>2.4. pandoc</strong></h4>
+<div class="figure">
+<img src="../images/pandoc-logo.png" alt="pandoc" />
+<p class="caption">pandoc</p>
+</div>
+<h4 id="advantage-of-pandoc"><strong>2.4.1. Advantage of pandoc</strong></h4>
+<h4 id="markdown"><strong>2.5. Markdown</strong></h4>
+<div class="figure">
+<img src="../images/markdown-logo.png" alt="markdown" />
+<p class="caption">markdown</p>
+</div>
+<h4 id="personal-experience-regarding-project-1"><strong>2.6. Personal experience regarding project 1</strong></h4>
+<h4 id="resources-employed-to-get-the-job-done"><strong>2.6.1. Resources employed to get the job done</strong></h4>
+<h4 id="easy-parts"><strong>2.6.2. Easy parts</strong></h4>
+<h4 id="challenging-parts"><strong>2.6.3. Challenging parts</strong></h4>
+<p>The most challenging parts other than troubleshooting github was, in fact, understanding which role each apparatus takes in reproducible workflow. I understand that all the reasons and their roles are covered during class; however, it was absolutely an eye-opening experience to actually put together a document using all the tools that we have learned during class. It took me some time to deeply think of the roles that each tool takes, and it was both challenging and fascinating experience to have from this project.</p>
+<h4 id="parts-where-i-was-stuck-with"><strong>2.6.4. Parts where I was stuck with</strong></h4>
+<p>The part I was stuck with for writing this paper was troubleshooting <em>git push</em> operation error. I was experiencing unusual error in pushing the repo to my github repo with a message saying</p>
+<pre><code>To https://github.com/dudgnskim/stat159-fa16.git
+ ! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to &#39;https://github.com/dudgnskim/stat159-fa16.git&#39;
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: &#39;git pull ...&#39;) before pushing again.
+hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</code></pre>
+<p>Since the submission is by pushing the content with correct working directory to the github repo, I had no choice but to fix this issue. In order to resolve this issue, I tried multiple approaches including:</p>
+<ol style="list-style-type: decimal">
+<li>'git pull' and 'git push'</li>
+<li>Putting Makefile into .gitignore file</li>
+<li>Creating 'README.md' in project folder</li>
+<li>Deleting the existing local git repo, creating another local git repo, and eventually connect the new local repository with the github repository</li>
+<li>Creating README.md file for the github repo</li>
+<li>'git pull'</li>
+<li>Copying&amp;Pasting the content of the 'README.md' file created from the github repo to local repo</li>
+<li>git add . &amp; git commit</li>
+<li>git push -u origin master</li>
+</ol>
+<p>In the end, I believe the error was caused because I created a README.md file on the github repository, but clearly it was not in my local repository. Since there exists a file on the github repo, which is updated by the local repo by <em>git push</em> command, it was only natural for the program to get confused, and throw me the error with hint messages.</p>
+<h4 id="most-time-consuming-part"><strong>2.6.5. Most time-consuming part</strong></h4>
+<p>Except for the long and extensive troubleshooting that I had to experience, I invested most of my time actually writing the paper. Even though 20000 characters approximate to 6000 words, and it is essentially around 5~6 pages of paper, it is definitely not an easy task to write a paper consisting of nearly 20000 characters.</p>
+<h4 id="total-time-used"><strong>2.6.6. Total time used</strong></h4>
+<p>For the project, I had to invest around 8 hours, mostly due to errors on pushing local repository to my web repository. Aside from the troubleshooting of '<em>git push</em>' operations, total time consumed for the project was around 4~5 hours.</p>
 <hr />
 <h3 id="conclusions-1"><strong>3. CONCLUSIONS</strong></h3>
 </body>

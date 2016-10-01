@@ -30,4 +30,6 @@ The **main objective** of this paper is to introduce the _computational tools_, 
 * Did you work with and/or get help from someone else? If yes, in what manner?
 * How much time did it take?
 
+This paper is created from one of the projects of STAT159, _Reproducible and Collaborative Statistical Data Science_. ![stat159](../images/stat159-logo.png)
+
 
