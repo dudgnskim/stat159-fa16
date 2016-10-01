@@ -48,7 +48,12 @@ The principles of reproducible research  are the following:
 * Makes it easier for them to make a more informed assessment of our methods and results
 * Makes it easier for them to adapt our methods to their own research.
 
+There are three different ways of reproducible research: computational, empirical, statistical
 
+We are going to tackle computational reproducibility. For computational reproducible research, there are several categories: reviewable, replicable, confirmable, auditable, open research.
+In order to achieve computational reproducibility, we need to 
+
+how can software make out research more reproducible?
 
 - - -
 
@@ -58,6 +63,7 @@ In this section, I will address the main bullet-point questions from Abstract.
 
 #### **2.1. Makefile** [1]
 
+Makefile is a file that is executed by the command _make_.
 
 #### **2.1.1. Role of Makefile in reproducible workflow**
 
@@ -147,6 +153,11 @@ For the project, I had to invest around 8 hours, mostly due to errors on pushing
 - - -
 
 ### **3. CONCLUSIONS**
+
+Importance of Reproducible research, and creating reproducible documents
+In order to achieve computational reproducibility, several tools have been employed (above).
+Explain briefly what each one does for reproducibility
+State my experience throughout the project.
 
 
 

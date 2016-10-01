@@ -6,10 +6,11 @@ In this section, I will address the main bullet-point questions from Abstract.
 
 #### **2.1. Makefile** [1]
 
-
+Makefile is a file that is executed by the command _make_. Makefile contains all the commands that are executed by _make_ command. Most often, makefile tells _make_ how to compile a program.
 
 #### **2.1.1. Role of Makefile in reproducible workflow**
 
+Role of Makefile in reproducible workflow is immense. It tells _make_ command to execute all the necessary functions according to the dependencies, and compile programs. Since Makefile contains all the commands and dependencies needed to compile a program / document, it is very easy for the readers to follow the author to reproduce the result.
 
 #### **2.2. Git** [2]
 ![git](../images/git-logo.png)
