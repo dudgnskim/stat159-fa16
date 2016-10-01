@@ -33,18 +33,18 @@ GitHub is very essential to this project because it works as a window / door for
 #### **2.4. pandoc** [4]
 ![pandoc](../images/pandoc-logo.png)
 
-
+pandoc is a universal document converter. It understands a number of useful markdown syntax extensions. It can convert files in a certain programming language to various different document formats (e.g. .md -> .pdf, .md -> .html).
 
 #### **2.4.1. Advantage of pandoc**
 
+The advantage of pandoc will definitely be the flexibility in converting documents. Not only does it convert many languages into document formats, but also does it create documents from multiple inputs.
 
-#### **2.5. Markdown** [5]
+#### **2.5. Markdown** 
 ![markdown](../images/markdown-logo.png)
 
-
+Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other document formats. It is often used to create README files. [5]
 
 #### **2.6. Personal experience regarding project 1**
-
 
 #### **2.6.1. Resources employed to get the job done**
 

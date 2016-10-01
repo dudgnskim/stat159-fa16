@@ -63,10 +63,11 @@ In this section, I will address the main bullet-point questions from Abstract.
 
 #### **2.1. Makefile** [1]
 
-Makefile is a file that is executed by the command _make_.
+Makefile is a file that is executed by the command _make_. Makefile contains all the commands that are executed by _make_ command. Most often, makefile tells _make_ how to compile a program.
 
 #### **2.1.1. Role of Makefile in reproducible workflow**
 
+Role of Makefile in reproducible workflow is immense. It tells _make_ command to execute all the necessary functions according to the dependencies, and compile programs. Since Makefile contains all the commands and dependencies needed to compile a program / document, it is very easy for the readers to follow the author to reproduce the result.
 
 #### **2.2. Git** [2]
 ![git](../images/git-logo.png)
@@ -89,18 +90,18 @@ GitHub is very essential to this project because it works as a window / door for
 #### **2.4. pandoc** [4]
 ![pandoc](../images/pandoc-logo.png)
 
-
+pandoc is a universal document converter. It understands a number of useful markdown syntax extensions. It can convert files in a certain programming language to various different document formats (e.g. .md -> .pdf, .md -> .html).
 
 #### **2.4.1. Advantage of pandoc**
 
+The advantage of pandoc will definitely be the flexibility in converting documents. Not only does it convert many languages into document formats, but also does it create documents from multiple inputs.
 
-#### **2.5. Markdown** [5]
+#### **2.5. Markdown** 
 ![markdown](../images/markdown-logo.png)
 
-
+Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other document formats. It is often used to create README files. [5]
 
 #### **2.6. Personal experience regarding project 1**
-
 
 #### **2.6.1. Resources employed to get the job done**
 
@@ -178,7 +179,7 @@ State my experience throughout the project.
 [http://pandoc.org/](http://pandoc.org/)
 
 [5] Markdown:
-[http://kirkstrobeck.github.io/whatismarkdown.com/](http://kirkstrobeck.github.io/whatismarkdown.com/)
+[https://en.wikipedia.org/wiki/Markdown](https://en.wikipedia.org/wiki/Markdown)
 
 [6] STAT159 website:
 [http://gastonsanchez.com/stat159/](http://gastonsanchez.com/stat159/)

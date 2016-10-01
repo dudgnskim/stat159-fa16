@@ -26,7 +26,7 @@ State my experience throughout the project.
 [http://pandoc.org/](http://pandoc.org/)
 
 [5] Markdown:
-[http://kirkstrobeck.github.io/whatismarkdown.com/](http://kirkstrobeck.github.io/whatismarkdown.com/)
+[https://en.wikipedia.org/wiki/Markdown](https://en.wikipedia.org/wiki/Markdown)
 
 [6] STAT159 website:
 [http://gastonsanchez.com/stat159/](http://gastonsanchez.com/stat159/)
