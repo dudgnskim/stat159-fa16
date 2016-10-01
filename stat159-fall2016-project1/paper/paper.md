@@ -156,6 +156,7 @@ In order to achieve computational reproducibility, several tools have been emplo
 Explain briefly what each one does for reproducibility
 State my experience throughout the project.
 
+Reproducible research is important because it is utilized to show evidence or the author's correctness. In addition, it is to enable the audience to understand and _reproduce_ the methods and results. In order to achieve computational reproducibility, numerous tools have been developed. Makefile was developed so that other users can follow the methods and steps by observing the code, and Git created an environment where the audience can observe the history of _commits_, and also find the code readily. From this project, I struggled the most with actually using Git and GitHub because of the error regarding _git push_ command. However, all in all, I believe this was a very nice way of practicing and learning how reproducible documents are created by experience. 
 
 
 - - -
