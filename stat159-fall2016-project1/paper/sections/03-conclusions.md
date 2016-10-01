@@ -2,6 +2,11 @@
 
 ### **3. CONCLUSIONS**
 
+Importance of Reproducible research, and creating reproducible documents
+In order to achieve computational reproducibility, several tools have been employed (above).
+Explain briefly what each one does for reproducibility
+State my experience throughout the project.
+
 
 
 - - -
