@@ -2,6 +2,7 @@
 title: "Simple Regression Analysis"
 author: "Young Hoon Kim"
 date: "Oct 7, 2016"
+header-includes: \usepackage{float}
 output: pdf_document
 ---
 ```{r, echo=FALSE}
@@ -9,16 +10,16 @@ library(xtable)
 #setwd('~/coding/stat159/stat159-fa16/stat159-fall2016-hw02')
 ```
 
-## **Abstract**  
+### **Abstract**  
 In this report, I am going to reproduce the main results displayed in Section 3.1 _Simple Linear Regression_ (Chapter 3) of the book **An Introduction to Statistical Learning**.  
 
-## **Introduction**  
+### **Introduction**  
 The overall goal is to provide advice on how to improve sales of the particular product. More specifically, the idea is to determine whether there is an association between advertising and sales, and if so, develop an accurate model that can be used to predict sales on the basis of the three media budgets.  
 
-## **Data**  
+### **Data**  
 The Advertising data set consists of the **Sales** (in thousands of units) of a particular product in 200 different markets, along with advertising budgets (in thousands of dollars) for the product in each of those markets for three different media: **TV**, **Radio**, and **Newspaper**.
 
-## **Methodology**  
+### **Methodology**  
 We consider one media from the data set, TV, and study its relationship with Sales. For this purpose, we use a simple linear model:
 \begin{equation}
 \centering
@@ -26,13 +27,13 @@ Sales= \beta_0 + \beta_1TV
 \end{equation}
 To estimate the coefficients $\beta_0$ and $\beta_1$ we fit a regression model via the least squares criterion.
 
-## **Results**
+### **Results**
 We compute the regression coefficients  
 ```{r, echo=FALSE}
 load('../data/regression.RData')
 coef <- xtable(reg_sum$coefficients)
 ```
-\begin{table}[!h]
+\begin{table}[!hb]
 \centering
 \caption{Information about Regression Coefficients}
 \begin{tabular}{rrrrr}
@@ -53,7 +54,7 @@ rqi[3,] <- c('F-stat', reg_sum$fstatistic[1])
 rqi$Value <- round(as.numeric(rqi$Value), digits = 2)
 rqi_tex <- xtable(rqi)
 ```
-\begin{table}[ht]
+\begin{table}[!hb]
 \centering
 \caption{Regression Quality Indices}
 \begin{tabular}{rlr}
@@ -67,14 +68,14 @@ rqi_tex <- xtable(rqi)
 \end{tabular}
 \end{table}
 
-\begin{figure}[t]
+
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=10cm]{../images/scatterplot-tv-sales.png}
 \caption{Scatterplot with fitted regression line}
 \end{figure}  
 
-
 Here is the scatterplot.
 
-## **Conclusions**  
+###**Conclusions**  
 That's it!
