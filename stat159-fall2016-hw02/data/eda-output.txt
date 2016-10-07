@@ -1,0 +1,15 @@
+Summary statistics of tv: 
+Minimum:  0.7 
+1st Qu.:  74.38 
+Median:  149.8 
+Mean:  147 
+3rd Qu.:  218.8 
+Maximum:  296.4 
+
+Summary statistics of sales: 
+Minimum:  1.6 
+1st Qu.:  10.38 
+Median:  12.9 
+Mean:  14.02 
+3rd Qu.:  17.4 
+Maximum:  27 
