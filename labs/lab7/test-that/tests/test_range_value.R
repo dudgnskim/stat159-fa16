@@ -28,7 +28,7 @@ test_that("range of y", {
 	# Testing the length of range_value(y)
 	expect_length(range_value(y), 1)
 	# Testing the range_value(y)
-	expect_equal(range_value(y), NA_real_)
+	expect_equal(range_value(y), 3)
 	})
 
 # Test on z
