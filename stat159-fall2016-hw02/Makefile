@@ -17,6 +17,9 @@ eda-output.txt: eda-script.R Advertising.csv
 
 scatterplot-tv-sales.png: code/regression-script.R Advertising.csv
 	cd code; Rscript regression-script.R
+
+histogram-tv.png: code/eda-script.R Advertising.csv
+	cd code; Rscript eda-script.R
 	
 report.pdf: report/report.Rmd regression.RData scatterplot-tv-sales.png
 	cd report; Rscript -e "library(rmarkdown); render('report.Rmd')"
