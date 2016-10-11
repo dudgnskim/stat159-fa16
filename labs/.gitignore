@@ -1,1 +1,9 @@
-.Rhistory
+# Not tracking R history
+*.Rhistory
+
+# Mac specific
+*.DS_Store
+
+# latex specific
+*.aux
+*.log
