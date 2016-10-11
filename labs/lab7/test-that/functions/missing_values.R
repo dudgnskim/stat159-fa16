@@ -3,5 +3,5 @@ missing_values <- function(x) {
 	# Input: numeric vector x
 	# Output: the number of missing values
 	
-	return sum(is.na(x))
+	return(sum(is.na(x)))
 }
