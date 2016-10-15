@@ -43,7 +43,7 @@ test_that("r_squared of mtcars", {
 
 # F-stat test
 test_that("fstat of mtcars", {
-  expect_equal(fstat(reg), regsum$fstatistic[1])
+  expect_equal(fstat(reg), unname(regsum$fstatistic[1]))
   expect_type(fstat(reg), 'double')
   expect_type(regsum$fstatistic[1], 'double')
 })
