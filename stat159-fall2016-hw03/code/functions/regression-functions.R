@@ -15,9 +15,12 @@ tss <- function(lm_obj) {
 #rse = sqrt(RSS/degrees of freedom)
 rse <- function(lm_obj) {
   rss <- rss(lm_obj)
-  df <- lm_obj$df.residuals
-  return(sqrt(rss/df))
+  n <- nrow(lm_obj$model)
+  p <- ncol(lm_obj$model) - 1
+  rse <- sqrt(rss/(n-p-1))
+  return(rse)
 }
+
 
 ## R2
 #r_squared = (TSS - RSS)/RSS = 1 - RSS/TSS
@@ -33,16 +36,16 @@ adj_r_sq <- function(lm_obj) {
   n <- nrow(lm_obj$model)
   rss <- rss(lm_obj)
   tss <- tss(lm_obj)
-  df <- lm_obj$df.residuals
-  return(1 - ((rss/df)/(tss/(n-1))))
+  p <- ncol(lm_obj$model) - 1
+  return(1 - ((rss/(n-p-1))/(tss/(n-1))))
 }
 
 ## F_stat
 #f-stat = ((TSS-RSS)/p)/(RSS/(n-p-1)) = ((TSS-RSS)/RSS) * ((n-p-1)/p)
 fstat <- function(lm_obj) {
+  n <- nrow(lm_obj$model)
   p <- ncol(lm_obj$model) - 1
   rss <- rss(lm_obj)
   tss <- tss(lm_obj)
-  df <- lm_obj$df.residuals
-  return(((tss-rss)/p)/(rss/df))
+  return(((tss-rss)/p)/(rss/(n-p-1)))
 }
