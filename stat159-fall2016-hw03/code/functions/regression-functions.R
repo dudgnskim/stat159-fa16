@@ -47,5 +47,7 @@ fstat <- function(lm_obj) {
   p <- ncol(lm_obj$model) - 1
   rss <- rss(lm_obj)
   tss <- tss(lm_obj)
-  return(((tss-rss)/p)/(rss/(n-p-1)))
+  fstat <- ((tss-rss)/p)/(rss/(n-p-1))
+  f.df <- data.fram
+  return(as.numeric(fstat))
 }
