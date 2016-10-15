@@ -13,5 +13,25 @@ tv <- ad$TV
 radio <- ad$Radio
 news <- ad$Newspaper
 
+## Scatterplots
+# scatterplot-tv-sales
+png('scatterplot-tv-sales.png')
+plot(sales ~ tv, cex=1, pch=19, col='tomato')
+dev.off()
+# scatterplot-radio-sales
+png('scatterplot-radio-sales.png')
+plot(sales ~ radio, cex=1, pch=19, col='navy')
+dev.off()
+# scatterplot-newspaper-sales
+png('scatterplot-newspaper-sales.png')
+plot(sales ~ news, cex=1, pch=19, col='orange')
+dev.off()
 
-save
+## Save regression.RData
+reg <- lm()
+save()
+
+
+
+
+
