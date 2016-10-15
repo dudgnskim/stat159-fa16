@@ -47,17 +47,17 @@ sa.sum <- summary(s_all)
 
 ## Residual plot
 res <- summary(s_all)$residuals
-png('residual-plot.png')
+png('images/residual-plot.png')
 plot(s_all, which=1)
 dev.off()
 
 ## Scale-location-plot.png
-png('scale-location-plot.png')
+png('images/scale-location-plot.png')
 plot(s_all, which=3)
 dev.off()
 
 ## Normal Q-Q plot
-png('normal-qq-plot.png')
+png('images/normal-qq-plot.png')
 plot(s_all, which=2)
 dev.off()
 
