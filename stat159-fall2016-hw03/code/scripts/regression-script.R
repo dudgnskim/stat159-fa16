@@ -48,13 +48,18 @@ sa.sum <- summary(s_all)
 ## Residual plot
 res <- summary(s_all)$residuals
 png('residual-plot.png')
-plot(res, ylab='residuals')
+plot(s_all, which=1)
+dev.off()
+
+## Scale-location-plot.png
+png('scale-location-plot.png')
+plot(s_all, which=3)
+dev.off()
+
+## Normal Q-Q plot
+png('normal-qq-plot.png')
+plot(s_all, which=2)
 dev.off()
 
 ## Save regression.RData
 save(sa.sum, st.sum, sr.sum, sn.sum, file='data/regression.RData')
-
-
-
-
-
