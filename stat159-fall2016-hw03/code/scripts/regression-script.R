@@ -62,4 +62,4 @@ plot(s_all, which=2)
 dev.off()
 
 ## Save regression.RData
-save(sa.sum, st.sum, sr.sum, sn.sum, file='data/regression.RData')
+save(s_all, s_tv, s_radio, s_news, file='data/regression.RData')
