@@ -184,6 +184,9 @@ Scatterplots of simple regressions, and the plots of multiple regression are the
 
 ###**Conclusions**  
 1. Is at least one of the predictors useful in predicting the response?
+  From the coeffiecients table of multiple regression, we could determine that tv and radio are very significant in predicting the response. We can see this from the significantly low p-values of those predictors.
 2. Do all predictors help to explain the response, or is only a subset of the predictors useful?
+  Only tv and radio are the useful predictors to explain the response.
 3. How well does the model fit the data?
+  According to the R-squared value, we can determine that the model fits the data quite well.
 4. How accurate is the prediction?
