@@ -43,7 +43,7 @@ dev.off()
 c.m <- cor(ad[,-4])
 save(c.m, file='data/correlation-matrix.RData')
 png('scatterplot-matrix.png')
-plot(c.m)
+pairs(c.m)
 dev.off()
 
 
