@@ -7,14 +7,14 @@ output: pdf_document
 ---
 ```{r, echo=FALSE}
 library(xtable)
-#setwd('~/coding/stat159/stat159-fa16/stat159-fall2016-hw02')
+library(testthat)
 ```
 
 ### **Abstract**  
-In this report, I am going to reproduce the main results displayed in Section 3.1 _Simple Linear Regression_ (Chapter 3) of the book **An Introduction to Statistical Learning**.  
+In this report, I am going to conduct *Multiple Regression Analysis* that is explained in the Section 3.2 _Multiple Linear Regression_ (Chapter 3) of the book **An Introduction to Statistical Learning**.  
 
 ### **Introduction**  
-The overall goal is to provide advice on how to improve sales of the particular product. More specifically, the idea is to determine whether there is an association between advertising and sales, and if so, develop an accurate model that can be used to predict sales on the basis of the three media budgets.  
+The overall goal is to provide advice on how to improve sales of the particular product. More specifically, the idea is to determine whether there is an association between advertising and sales, and if so, develop an accurate model that can be used to predict sales on the basis of the three media budgets.
 
 ### **Data**  
 The Advertising data set consists of the **Sales** (in thousands of units) of a particular product in 200 different markets, along with advertising budgets (in thousands of dollars) for the product in each of those markets for three different media: **TV**, **Radio**, and **Newspaper**.
@@ -23,19 +23,24 @@ The Advertising data set consists of the **Sales** (in thousands of units) of a 
 We consider one media from the data set, TV, and study its relationship with Sales. For this purpose, we use a simple linear model:
 \begin{equation}
 \centering
-Sales= \beta_0 + \beta_1TV
+Sales= \beta_0 + \beta_1TV + \beta_2Radio + \beta_3Newspaper
 \end{equation}
-To estimate the coefficients $\beta_0$ and $\beta_1$ we fit a regression model via the least squares criterion.
+To estimate the coefficients $\beta_0$, $\beta_1$, $\beta_2$, and $\beta_3$, we first conduct simple linear regression of Sales over each predictor, and we fit a multiple regression model employing all the predictors 'TV, Radio, Newspaper' via the least squares criterion.
 
 ### **Results**
-We compute the regression coefficients  
+First, we compute the simple regression coefficients for each predictors.
 ```{r, echo=FALSE}
 load('../data/regression.RData')
-coef <- xtable(reg_sum$coefficients)
 ```
-\begin{table}[!hb]
+
+```{r, echo=FALSE}
+stv <- xtable(summary(s_tv)$coefficients)
+sra <- xtable(summary(s_radio)$coefficients)
+snw <- xtable(summary(s_news)$coefficients)
+```
+\begin{table}[ht]
 \centering
-\caption{Information about Regression Coefficients}
+\caption{Simple regression of sales on tv}
 \begin{tabular}{rrrrr}
   \hline
  & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
@@ -45,37 +50,140 @@ coef <- xtable(reg_sum$coefficients)
    \hline
 \end{tabular}
 \end{table}  
-More information about the least squares model is given in the table below:  
-```{r, echo=FALSE}
-rqi <- data.frame(Quantity=vector(), Value=vector(), stringsAsFactors = FALSE)
-rqi[1,] <- c('RSE', reg_sum$sigma)
-rqi[2,] <- c('R2', reg_sum$r.squared)
-rqi[3,] <- c('F-stat', reg_sum$fstatistic[1])
-rqi$Value <- round(as.numeric(rqi$Value), digits = 2)
-rqi_tex <- xtable(rqi)
-```
-\begin{table}[!hb]
+
+\begin{table}[ht]
 \centering
-\caption{Regression Quality Indices}
-\begin{tabular}{rlr}
+\caption{Simple regression of sales on radio}
+\begin{tabular}{rrrrr}
   \hline
- & Quantity & Value \\ 
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
   \hline
-1 & RSE & 3.26 \\ 
-  2 & R2 & 0.61 \\ 
-  3 & F-stat & 312.14 \\ 
+(Intercept) & 9.31 & 0.56 & 16.54 & 0.00 \\ 
+  radio & 0.20 & 0.02 & 9.92 & 0.00 \\ 
+   \hline
+\end{tabular}
+\end{table}  
+
+\begin{table}[ht]
+\centering
+\caption{Simple regression of sales on newspaper}
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 12.35 & 0.62 & 19.88 & 0.00 \\ 
+  news & 0.05 & 0.02 & 3.30 & 0.00 \\ 
    \hline
 \end{tabular}
 \end{table}
 
+In order to understand that full regression model, we now fit multiple regression model to the data using all three predictors.
+```{r, echo=FALSE}
+sa <- xtable(summary(s_all)$coefficients)
+```
+\begin{table}[ht]
+\centering
+\caption{Multiple regression of sales on tv, radio, and newspaper}
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 2.94 & 0.31 & 9.42 & 0.00 \\ 
+  tv & 0.05 & 0.00 & 32.81 & 0.00 \\ 
+  radio & 0.19 & 0.01 & 21.89 & 0.00 \\ 
+  news & -0.00 & 0.01 & -0.18 & 0.86 \\ 
+   \hline
+\end{tabular}
+\end{table}  
+
+The correlation matrix that displays the correlation among the variables is the following.  
+```{r, echo=FALSE}
+load('../data/correlation-matrix.RData')
+cm <- xtable(corr_mat)
+```
+\begin{table}[ht]
+\centering
+\caption{Correlation matrix for TV, radio, newspaper, and sales for the Advertising data.}
+\begin{tabular}{rrrrr}
+  \hline
+ & TV & Radio & Newspaper & Sales \\ 
+  \hline
+TV & 1.00 & 0.05 & 0.06 & 0.78 \\ 
+  Radio &  & 1.00 & 0.35 & 0.58 \\ 
+  Newspaper &  &  & 1.00 & 0.23 \\ 
+  Sales &  &  &  & 1.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+In order to understand the fit of the model, we need to understand how the error measures display the performance of the model.
+```{r, echo=FALSE}
+rqi <- data.frame(Quantity=vector(), Value=vector(), stringsAsFactors = FALSE)
+rqi[1,] <- c('Residual standard error', round(summary(s_all)$sigma,digit=2))
+rqi[2,] <- c('R2', round(summary(s_all)$r.squared,digit=3))
+rqi[3,] <- c('F-stat', round(summary(s_all)$fstatistic[1],0))
+rqi_tex <- xtable(rqi)
+```
+\begin{table}[ht]
+\centering
+\caption{Regression Quantity Indices}
+\begin{tabular}{rll}
+  \hline
+ & Quantity & Value \\ 
+  \hline
+1 & Residual standard error & 1.69 \\ 
+  2 & R2 & 0.897 \\ 
+  3 & F-stat & 570 \\ 
+   \hline
+\end{tabular}
+\end{table}  
+
+Scatterplots of simple regressions, and the plots of multiple regression are the following:  
 
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=10cm]{../images/scatterplot-tv-sales.png}
-\caption{Scatterplot with fitted regression line}
+\caption{Scatterplot of sales and tv}
 \end{figure}  
 
-Here is the scatterplot.
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{../images/scatterplot-radio-sales.png}
+\caption{Scatterplot of sales and radio}
+\end{figure}  
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{../images/scatterplot-newspaper-sales.png}
+\caption{Scatterplot of sales and newspaper}
+\end{figure}  
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{../images/scatterplot-matrix.png}
+\caption{Scatterplot of the correlation matrix}
+\end{figure}  
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{../images/residual-plot.png}
+\caption{residual plot of multiple regression}
+\end{figure}  
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{../images/scale-location-plot.png}
+\caption{scale-location plot}
+\end{figure}  
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{../images/normal-qq-plot.png}
+\caption{Normal Q-Q plot of multiple regression}
+\end{figure}  
 
 ###**Conclusions**  
-That's it!
+1. Is at least one of the predictors useful in predicting the response?
+2. Do all predictors help to explain the response, or is only a subset of the predictors useful?
+3. How well does the model fit the data?
+4. How accurate is the prediction?
