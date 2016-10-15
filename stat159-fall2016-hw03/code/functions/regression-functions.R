@@ -19,7 +19,7 @@ rse <- function(lm_obj) {
   return(sqrt(rss/df))
 }
 
-## R_squared
+## R2
 #r_squared = (TSS - RSS)/RSS = 1 - RSS/TSS
 r_squared <- function(lm_obj) {
   rss <- rss(lm_obj)
@@ -27,7 +27,7 @@ r_squared <- function(lm_obj) {
   return(1 - rss/tss)
 }
 
-## Adjusted R_squared
+## Adjusted R2
 #adj_r_sq = 1 - (RSS/(n-p-1))/(TSS/(n-1))
 adj_r_sq <- function(lm_obj) {
   n <- nrow(lm_obj$model)

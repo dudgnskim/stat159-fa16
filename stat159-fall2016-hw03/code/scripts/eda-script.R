@@ -40,8 +40,8 @@ hist(news)
 dev.off()
 
 ## Correlation Matrix
-c.m <- cor(ad[,-4])
-save(c.m, file='data/correlation-matrix.RData')
+corr_mat <- cor(ad[,-4])
+save(corr_mat, file='data/correlation-matrix.RData')
 png('images/scatterplot-matrix.png')
 pairs(c.m)
 dev.off()
