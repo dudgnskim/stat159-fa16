@@ -7,3 +7,4 @@ width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br 
 href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 Author: Young Hoon Kim
+# stat159-fall2016-project2
