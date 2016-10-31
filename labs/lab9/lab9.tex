@@ -51,7 +51,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{float}
 \newtheorem{theorem}{THEOREM}
 \newtheorem{proof}{PROOF}
 \usepackage{natbib}
@@ -80,43 +79,27 @@ We consider one media from the data set, TV, and study its relationship with Sal
 \centering
 Sales= \beta_0 + \beta_1TV
 \end{equation}
-To estimate the coefficients $\beta_0$ and $\beta_1$ we fit a regression model via the least squares criterion.
+To estimate the coefficients $\beta_0$ and $\beta_1$ we fit a regression model via the least squares criterion.\\
 
-\section*{Results}
-We compute the regression coefficients  
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
-## \begin{table}[!h]
-## \centering
-## \begin{tabular}{rrrrr}
-##   \hline
-##  & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
-##   \hline
-## (Intercept) & 7.03 & 0.46 & 15.36 & 0.00 \\ 
-##   tv & 0.05 & 0.00 & 17.67 & 0.00 \\ 
-##    \hline
-## \end{tabular}
-## \end{table}
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
-
+\section*{Results} We compute the regression coefficients\\
 \begin{table}[!h]
 \centering
-\caption{Information about Regression Coefficients}
+\caption{Information about Regression Coefficients} 
 \begin{tabular}{rrrrr}
   \hline
- & Estimate & Std. Error & t value & Pr($>|t|$) \\ 
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
   \hline
 (Intercept) & 7.03 & 0.46 & 15.36 & 0.00 \\ 
   tv & 0.05 & 0.00 & 17.67 & 0.00 \\ 
    \hline
 \end{tabular}
-\end{table}  
-More information about the least squares model is given in the table below:  
+\end{table}
+
+
+More information about the least squares model is given in the table below:\\
 \begin{table}[ht]
 \centering
+\caption{Regression Quality Indices} 
 \begin{tabular}{rlr}
   \hline
  & Quantity & Value \\ 
@@ -130,8 +113,7 @@ More information about the least squares model is given in the table below:
 
 
 
-
-\begin{figure}[!ht]
+\begin{figure}[!hb]
 \centering
 \includegraphics[width=10cm]{scatterplot-tv-sales.png}
 \caption{Scatterplot with fitted regression line}
@@ -139,7 +121,6 @@ More information about the least squares model is given in the table below:
 
 Here is the scatterplot.
 
-\section*{Conclusions}
-That's it!
+\section*{Conclusions} That's it!
 
 \end{document}

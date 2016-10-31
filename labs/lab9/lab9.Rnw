@@ -2,7 +2,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{float}
 \newtheorem{theorem}{THEOREM}
 \newtheorem{proof}{PROOF}
 \usepackage{natbib}
@@ -33,42 +32,28 @@ We consider one media from the data set, TV, and study its relationship with Sal
 \centering
 Sales= \beta_0 + \beta_1TV
 \end{equation}
-To estimate the coefficients $\beta_0$ and $\beta_1$ we fit a regression model via the least squares criterion.
+To estimate the coefficients $\beta_0$ and $\beta_1$ we fit a regression model via the least squares criterion.\\
 
-\section*{Results}
-We compute the regression coefficients  
-<<table1, echo=FALSE>>=
+\section*{Results} We compute the regression coefficients\\
+<<table1, echo=FALSE, results='asis'>>=
 load('regression.RData')
-coef <- xtable(reg_sum$coefficients)
-print(coef, comment = FALSE, table.placement='!h')
+coef <- xtable(reg_sum$coefficients, caption = 'Information about Regression Coefficients')
+print(coef, comment = FALSE, table.placement='!h', type='latex', caption.placement = 'top')
 @
 
-\begin{table}[!h]
-\centering
-\caption{Information about Regression Coefficients}
-\begin{tabular}{rrrrr}
-  \hline
- & Estimate & Std. Error & t value & Pr($>|t|$) \\ 
-  \hline
-(Intercept) & 7.03 & 0.46 & 15.36 & 0.00 \\ 
-  tv & 0.05 & 0.00 & 17.67 & 0.00 \\ 
-   \hline
-\end{tabular}
-\end{table}  
-More information about the least squares model is given in the table below:  
+More information about the least squares model is given in the table below:\\
 <<table2, echo=FALSE, results='asis'>>=
 rqi <- data.frame(Quantity=vector(), Value=vector(), stringsAsFactors = FALSE)
 rqi[1,] <- c('RSE', reg_sum$sigma)
 rqi[2,] <- c('R2', reg_sum$r.squared)
 rqi[3,] <- c('F-stat', reg_sum$fstatistic[1])
 rqi$Value <- round(as.numeric(rqi$Value), digits = 2)
-rqi_tex <- xtable(rqi)
-print(rqi_tex, comment=FALSE, table.placement='ht', type='latex')
+rqi_tex <- xtable(rqi, caption = 'Regression Quality Indices')
+print(rqi_tex, comment=FALSE, table.placement='ht', type='latex', caption.placement = 'top')
 @
 
 
-
-\begin{figure}[!ht]
+\begin{figure}[!hb]
 \centering
 \includegraphics[width=10cm]{scatterplot-tv-sales.png}
 \caption{Scatterplot with fitted regression line}
@@ -76,7 +61,6 @@ print(rqi_tex, comment=FALSE, table.placement='ht', type='latex')
 
 Here is the scatterplot.
 
-\section*{Conclusions}
-That's it!
+\section*{Conclusions} That's it!
 
 \end{document}
