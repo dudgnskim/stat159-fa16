@@ -13,21 +13,21 @@
 \author{YOUNG HOON KIM}
 \date{Oct 31, 2016}
 
-```{r, echo=FALSE}
+\begin{document}
+
+\maketitle
+
+<<library, echo=FALSE>>=
 library(xtable)
-#setwd('~/coding/stat159/stat159-fa16/stat159-fall2016-hw02')
-```
+@
 
-### **Abstract**  
-In this report, I am going to reproduce the main results displayed in Section 3.1 _Simple Linear Regression_ (Chapter 3) of the book **An Introduction to Statistical Learning**.  
+\section*{Abstract} In this report, I am going to reproduce the main results displayed in Section 3.1 \emph{Simple Linear Regression} (Chapter 3) of the book \textbf{An Introduction to Statistical Learning}.
 
-### **Introduction**  
-The overall goal is to provide advice on how to improve sales of the particular product. More specifically, the idea is to determine whether there is an association between advertising and sales, and if so, develop an accurate model that can be used to predict sales on the basis of the three media budgets.  
+\section*{Introduction} The overall goal is to provide advice on how to improve sales of the particular product. More specifically, the idea is to determine whether there is an association between advertising and sales, and if so, develop an accurate model that can be used to predict sales on the basis of the three media budgets.  
 
-### **Data**  
-The Advertising data set consists of the **Sales** (in thousands of units) of a particular product in 200 different markets, along with advertising budgets (in thousands of dollars) for the product in each of those markets for three different media: **TV**, **Radio**, and **Newspaper**.
+\section*{Data} The Advertising data set consists of the \textbf{Sales} (in thousands of units) of a particular product in 200 different markets, along with advertising budgets (in thousands of dollars) for the product in each of those markets for three different media: \textbf{TV}, \textbf{Radio}, and \textbf{Newspaper}.
 
-### **Methodology**  
+\section*{Methodology}
 We consider one media from the data set, TV, and study its relationship with Sales. For this purpose, we use a simple linear model:
 \begin{equation}
 \centering
@@ -35,18 +35,20 @@ Sales= \beta_0 + \beta_1TV
 \end{equation}
 To estimate the coefficients $\beta_0$ and $\beta_1$ we fit a regression model via the least squares criterion.
 
-### **Results**
+\section*{Results}
 We compute the regression coefficients  
-```{r, echo=FALSE}
-load('../data/regression.RData')
+<<table1, echo=FALSE>>=
+load('regression.RData')
 coef <- xtable(reg_sum$coefficients)
-```
-\begin{table}[!hb]
+print(coef, comment = FALSE, table.placement='!h')
+@
+
+\begin{table}[!h]
 \centering
 \caption{Information about Regression Coefficients}
 \begin{tabular}{rrrrr}
   \hline
- & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+ & Estimate & Std. Error & t value & Pr($>|t|$) \\ 
   \hline
 (Intercept) & 7.03 & 0.46 & 15.36 & 0.00 \\ 
   tv & 0.05 & 0.00 & 17.67 & 0.00 \\ 
@@ -54,36 +56,27 @@ coef <- xtable(reg_sum$coefficients)
 \end{tabular}
 \end{table}  
 More information about the least squares model is given in the table below:  
-```{r, echo=FALSE}
+<<table2, echo=FALSE, results='asis'>>=
 rqi <- data.frame(Quantity=vector(), Value=vector(), stringsAsFactors = FALSE)
 rqi[1,] <- c('RSE', reg_sum$sigma)
 rqi[2,] <- c('R2', reg_sum$r.squared)
 rqi[3,] <- c('F-stat', reg_sum$fstatistic[1])
 rqi$Value <- round(as.numeric(rqi$Value), digits = 2)
 rqi_tex <- xtable(rqi)
-```
-\begin{table}[!hb]
-\centering
-\caption{Regression Quality Indices}
-\begin{tabular}{rlr}
-  \hline
- & Quantity & Value \\ 
-  \hline
-1 & RSE & 3.26 \\ 
-  2 & R2 & 0.61 \\ 
-  3 & F-stat & 312.14 \\ 
-   \hline
-\end{tabular}
-\end{table}
+print(rqi_tex, comment=FALSE, table.placement='ht', type='latex')
+@
+
 
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=10cm]{../images/scatterplot-tv-sales.png}
+\includegraphics[width=10cm]{scatterplot-tv-sales.png}
 \caption{Scatterplot with fitted regression line}
-\end{figure}  
+\end{figure}
 
 Here is the scatterplot.
 
-###**Conclusions**  
+\section*{Conclusions}
 That's it!
+
+\end{document}
