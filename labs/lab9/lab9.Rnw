@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{float}
 \newtheorem{theorem}{THEOREM}
 \newtheorem{proof}{PROOF}
 \usepackage{natbib}

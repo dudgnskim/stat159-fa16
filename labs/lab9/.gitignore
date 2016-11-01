@@ -1,0 +1,5 @@
+# latex specific
+*.aux
+*.log
+*.tex
+*.synctex.gz
