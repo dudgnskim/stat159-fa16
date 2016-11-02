@@ -54,9 +54,9 @@ print(rqi_tex, comment=FALSE, table.placement='ht', type='latex', caption.placem
 @
 
 
-\begin{figure}[!hb]
+\begin{figure}[hb]
 \centering
-\includegraphics[width=10cm]{scatterplot-tv-sales.png}
+\includegraphics[width=8cm]{scatterplot-tv-sales.png}
 \caption{Scatterplot with fitted regression line}
 \end{figure}
 
